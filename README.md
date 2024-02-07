@@ -5,7 +5,11 @@ The MIDP workbench is a utility library to download and preprocess eye tracking 
 
 # Installation
 
-TBD
+You can only install this project (at the moment) from GitHub.
+
+```
+pip install git+https://github.com/Fohlen/midp_workbench.git
+```
 
 # Usage
 
