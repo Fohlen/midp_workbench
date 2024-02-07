@@ -1,4 +1,3 @@
-#!/usr/bin/python3
 import argparse
 from functools import partial
 from pathlib import Path
@@ -13,7 +12,7 @@ from src.midp_workbench.sample import preprocess_sample, sample_objects_for_part
 HBN_S3_BUCKET = "fcp-indi"
 
 
-def main(
+def download_preprocess_samples(
         participant_ids: list[str],
         output_dir: Path,
         max_workers: int
@@ -38,7 +37,10 @@ def main(
     thread_map(download_fn, sample_objects, max_workers=max_workers)
 
 
-if __name__ == "__main__":
+def main():
+    """
+    This wrapper is necessary for command line scripts.
+    """
     parser = argparse.ArgumentParser()
     parser.add_argument(
         "participant_id", nargs="+"
@@ -51,4 +53,8 @@ if __name__ == "__main__":
     )
     args = parser.parse_args()
 
-    main(args.participant_id, args.output_dir, args.max_workers)
+    download_preprocess_samples(args.participant_id, args.output_dir, args.max_workers)
+
+
+if __name__ == "__main__":
+    main()
