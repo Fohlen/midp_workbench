@@ -23,7 +23,7 @@ Homepage = "https://github.com/Fohlen/midp_workbench"
 Issues = "https://github.com/Fohlen/midp_workbench/issues"
 
 [project.scripts]
-fetch-eeg-samples = "src.midp_workbench.fetch_eeg_samples:main"
+fetch-eeg-samples = "midp_workbench.fetch_eeg_samples:main"
 
 [build-system]
 requires = ["setuptools>=61.0"]

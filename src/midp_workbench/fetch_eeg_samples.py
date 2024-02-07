@@ -7,7 +7,7 @@ from botocore import UNSIGNED
 
 from tqdm.contrib.concurrent import thread_map
 
-from src.midp_workbench.sample import preprocess_sample, sample_objects_for_participant_ids
+from midp_workbench.sample import preprocess_sample, sample_objects_for_participant_ids
 
 HBN_S3_BUCKET = "fcp-indi"
 

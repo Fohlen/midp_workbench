@@ -5,7 +5,7 @@ import numpy
 
 from tqdm import tqdm
 
-from src.midp_workbench.parser import load_sample
+from midp_workbench.parser import load_sample
 
 HBN_FOLDER_BASE = "data/Projects/HBN/EEG"
 
