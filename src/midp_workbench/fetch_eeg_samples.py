@@ -5,9 +5,7 @@ from pathlib import Path
 
 import boto3
 from botocore import UNSIGNED
-import numpy
 
-from tqdm import tqdm
 from tqdm.contrib.concurrent import thread_map
 
 from src.midp_workbench.sample import preprocess_sample, sample_objects_for_participant_ids
@@ -43,7 +41,7 @@ def main(
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument(
-        "-p", "--participant-id", nargs="?", type=str
+        "participant_id", nargs="+"
     )
     parser.add_argument(
         "-o", "--output-dir", nargs="?", type=Path, default=Path.cwd() / "data" / "preprocessed_samples"
@@ -52,4 +50,5 @@ if __name__ == "__main__":
         "--max-workers", nargs="?", type=int, default=4
     )
     args = parser.parse_args()
-    main(args.participant_ids, args.output_dir, args.max_workers)
+
+    main(args.participant_id, args.output_dir, args.max_workers)
